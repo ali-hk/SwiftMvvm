@@ -1,0 +1,22 @@
+{
+  "name": "SwiftMvvm",
+  "version": "0.1.0",
+  "summary": "A short description of SwiftMvvm.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/ali-hk@users.noreply.github.com/SwiftMvvm",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "ali-hk@users.noreply.github.com": "ali-hk@users.noreply.github.com"
+  },
+  "source": {
+    "git": "https://github.com/ali-hk@users.noreply.github.com/SwiftMvvm.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "source_files": "SwiftMvvm/Classes/**/*"
+}
