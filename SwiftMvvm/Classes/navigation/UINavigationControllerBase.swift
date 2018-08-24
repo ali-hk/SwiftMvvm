@@ -7,7 +7,7 @@
 
 import Foundation
 
-open class UINavigationControllerBase: UINavigationController, INavigable {
+open class UINavigationControllerBase: UINavigationController, INavigable, INavigationAware {
     private var lastPageToken: String?
     private var lastParameter: Any?
 
@@ -20,14 +20,19 @@ open class UINavigationControllerBase: UINavigationController, INavigable {
     override open func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         super.prepare(for: segue, sender: sender)
 
-        guard let viewModelAware = segue.destination as? IViewModelAwareController else {
-            return
+        if let viewModelAware = segue.destination as? IViewModelAwareController {
+            guard let navigationAwareVM = viewModelAware.viewModelBase as? INavigationAware else {
+                return
+            }
+
+            navigationAwareVM.onNavigatedTo(withParameter: lastParameter)
         }
 
-        guard let navigationAwareVM = viewModelAware.viewModelBase as? INavigationAwareViewModel else {
-            return
+        if let navigationAwareVC = segue.destination as? INavigationAware {
+            navigationAwareVC.onNavigatedTo(withParameter: lastParameter)
         }
+    }
 
-        navigationAwareVM.onNavigatedTo(withParameter: lastParameter)
+    open func onNavigatedTo(withParameter parameter: Any?) {
     }
 }

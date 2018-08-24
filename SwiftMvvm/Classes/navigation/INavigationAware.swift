@@ -7,6 +7,6 @@
 
 import Foundation
 
-public protocol INavigationAwareViewModel: class {
+public protocol INavigationAware: class {
     func onNavigatedTo(withParameter parameter: Any?)
 }
