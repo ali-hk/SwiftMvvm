@@ -2,16 +2,19 @@ PODS:
   - Nimble (7.0.3)
   - Quick (1.2.0)
   - SwiftMvvm (0.1.0)
+  - Swinject (2.4.1)
 
 DEPENDENCIES:
   - Nimble (~> 7.0.2)
   - Quick (~> 1.2.0)
   - SwiftMvvm (from `../`)
+  - Swinject
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Nimble
     - Quick
+    - Swinject
 
 EXTERNAL SOURCES:
   SwiftMvvm:
@@ -21,7 +24,8 @@ SPEC CHECKSUMS:
   Nimble: 7f5a9c447a33002645a071bddafbfb24ea70e0ac
   Quick: 58d203b1c5e27fff7229c4c1ae445ad7069a7a08
   SwiftMvvm: 918fcbdfdb8cff64ff626adfa38173b1e631c781
+  Swinject: f7f15a9672e99328c1f07f277091087917215700
 
-PODFILE CHECKSUM: 3a17b86f63d8f2fb18573eb22b40ff46ffc307c0
+PODFILE CHECKSUM: 1ddedba3f8068e28d99f5d9be02d9b30cdf6223e
 
 COCOAPODS: 1.5.3

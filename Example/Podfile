@@ -2,6 +2,7 @@ use_frameworks!
 
 target 'SwiftMvvm_Example' do
   pod 'SwiftMvvm', :path => '../'
+  pod 'Swinject'
 
   target 'SwiftMvvm_Tests' do
     inherit! :search_paths
