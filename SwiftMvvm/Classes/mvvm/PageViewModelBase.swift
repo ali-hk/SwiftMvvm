@@ -7,11 +7,10 @@
 
 import Foundation
 
-public protocol PageViewModelBase: INavigatingViewModel {
-}
+open class PageViewModelBase: INavigatingViewModel {
+    public private(set) var navigationService: INavigationService
 
-extension PageViewModelBase {
-    init(navigationService: INavigationService) {
-        self.init(navigationService: navigationService)
+    public init(navigationService: INavigationService) {
+        self.navigationService = navigationService
     }
 }
