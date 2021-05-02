@@ -5,7 +5,7 @@
 //  Copyright © 2018 Ali Hosseini Khayat. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 open class UINavigationControllerBase: UINavigationController, INavigable, INavigationAware {
     private var lastPageToken: String?
