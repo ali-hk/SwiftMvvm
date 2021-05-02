@@ -20,11 +20,21 @@ open class UIViewControllerBase<TViewModel: ViewModelBase>: UIViewController, IV
         self.viewModelBase = self.viewModel
 
         super.init(coder: aDecoder)
+    }
 
+    open override func viewWillAppear(_ animated: Bool) {
         if let navigationController = self.navigationController as? UINavigationControllerBase, let navigatingViewModel = self.viewModel as? INavigatingViewModel {
             navigatingViewModel.navigationService.initialize(navigable: navigationController)
         } else if let navigatingViewModel = self.viewModel as? INavigatingViewModel {
             navigatingViewModel.navigationService.initialize(navigable: self)
+        }
+    }
+
+    open override func viewWillDisappear(_ animated: Bool) {
+        if let navigationController = self.navigationController as? UINavigationControllerBase, let navigatingViewModel = self.viewModel as? INavigatingViewModel {
+            navigatingViewModel.navigationService.uninitialize(navigable: navigationController)
+        } else if let navigatingViewModel = self.viewModel as? INavigatingViewModel {
+            navigatingViewModel.navigationService.uninitialize(navigable: self)
         }
     }
 
