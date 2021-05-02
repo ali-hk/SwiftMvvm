@@ -23,6 +23,7 @@ open class UIViewControllerBase<TViewModel: ViewModelBase>: UIViewController, IV
     }
 
     open override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         if let navigationController = self.navigationController as? UINavigationControllerBase, let navigatingViewModel = self.viewModel as? INavigatingViewModel {
             navigatingViewModel.navigationService.initialize(navigable: navigationController)
         } else if let navigatingViewModel = self.viewModel as? INavigatingViewModel {
@@ -31,6 +32,7 @@ open class UIViewControllerBase<TViewModel: ViewModelBase>: UIViewController, IV
     }
 
     open override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
         if let navigationController = self.navigationController as? UINavigationControllerBase, let navigatingViewModel = self.viewModel as? INavigatingViewModel {
             navigatingViewModel.navigationService.uninitialize(navigable: navigationController)
         } else if let navigatingViewModel = self.viewModel as? INavigatingViewModel {
